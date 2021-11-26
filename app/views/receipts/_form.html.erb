@@ -1,0 +1,21 @@
+
+<%= form_for(receipt) do |f| %>
+  <%= f.label :store_name %>
+  <%= f.text_field :store_name, list: "stores_autocomplete" %>
+  <datalist id="stores_autocomplete">
+    <% Store.all.each do |store| %>
+      <option value="<%= store.name %>">
+    <% end %>
+  </datalist><br>
+
+  <%= f.label :category_name %>
+  <%= f.text_field :category_name, list: "categories_autocomplete" %>
+  <datalist id="categories_autocomplete">
+    <% Category.all.each do |category| %>
+      <option value="<%= category.name %>">
+    <% end %>
+  </datalist>
+
+  <br>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

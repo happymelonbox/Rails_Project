@@ -1,0 +1,10 @@
+<h1>Your receipts</h1>
+<%= link_to("Add new receipt", new_receipt_path) %>
+<%# <%= link_to("Back to DashBoard", user_path(@user)) %> 
+<br>
+<% @receipts.each do |receipt| %>
+    <%= link_to receipt.id, receipt_path(receipt.id) %>
+    <%= link_to receipt.store.name, store_path(receipt.store.id) %>
+    <%= link_to receipt.category.name, category_path(receipt.category.id) %>
+    <br>
+<% end %>

@@ -1,0 +1,7 @@
+
+<%= form_for(notable) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control", placeholder: "Make a note" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
