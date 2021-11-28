@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'static#home'
-  get 'sessions/new'
-  get '/signin' => 'sessions#new'
-  post '/signin' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  
+  get '/login' => 'sessions#login'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
 
   resources :users
   resources :receipts

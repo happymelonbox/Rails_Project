@@ -1,5 +1,5 @@
 
-<%= form_for(notable) do |f| %>
+<%= form_for[notable, Note.new] do |f| %>
   <div class="form-group">
     <%= f.text_area :content, class: "form-control", placeholder: "Make a note" %>
   </div>

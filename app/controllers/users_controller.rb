@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authentication_redirect, :current_user, :only => [:show, :update]
+
     def new
       @user = User.new
     end
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
  
     private
     def user_params
-      params.require(:user).permit(:user_name, :password_digest, :first_name, :last_name, :email_address)
+      params.require(:user).permit(:user_name, :password, :first_name, :last_name, :email_address)
     end
   end
