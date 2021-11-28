@@ -7,10 +7,10 @@ class NotesController < ApplicationController
     end
 
     def create
-        @note = @notable.notes.new(note_params)
+        @note = Note.new(note_params)
         @note.user = current_user
         @note.save
-        redirect_to @notable, notice: "Noted"
+        redirect_to polymorphic_path(@note.notable), notice: "Noted"
     end
 
     def show
