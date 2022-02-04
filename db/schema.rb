@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_031512) do
+ActiveRecord::Schema.define(version: 2022_02_04_105719) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2021_12_01_031512) do
 
   create_table "receipts", force: :cascade do |t|
     t.integer "store_id"
+    t.date "date"
+    t.time "time"
     t.integer "category_id"
     t.float "total_price"
     t.integer "user_id"
@@ -67,13 +69,23 @@ ActiveRecord::Schema.define(version: 2021_12_01_031512) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "username"
     t.string "first_name"
     t.string "last_name"
-    t.text "email_address"
+    t.string "contact_number"
+    t.string "address_unit_number"
+    t.string "address_street_number"
+    t.string "address_street_name"
+    t.string "address_suburb"
+    t.string "address_city"
+    t.string "address_state"
+    t.string "address_country"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
   end
 
 end

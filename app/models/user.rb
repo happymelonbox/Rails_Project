@@ -7,5 +7,12 @@ class User < ActiveRecord::Base
     has_many :categories
     has_many :stores
 
-    validates :user_name, uniqueness: true
+    validates :username, uniqueness: true
+
+    def self.from_omniauth(response)
+        User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
+            u.email = response[:info][:email]
+            u.password = SecureRandom.hex(15)
+        end
+    end
 end

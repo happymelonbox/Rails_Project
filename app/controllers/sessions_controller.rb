@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user
       session[:user_id] = @user.id
-      redirect_to 'http://localhost:3000/'
+      redirect_to 'http://localhost:3000/receipts'
     else
       redirect_to '/login'
     end

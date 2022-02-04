@@ -2,6 +2,10 @@
 <%= form_for(receipt) do |f| %>
   <%= f.label :store_name %>
   <%= f.collection_select :store_id, Store.all, :id, :name %><br>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :time %>
+  <%= f.time_field :time %>
 
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
