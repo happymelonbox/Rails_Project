@@ -5,7 +5,6 @@ class ReceiptsController < ApplicationController
     def index
       @user ||= current_user
       @receipts = @user.receipts.all
-        
     end
 
     def new
@@ -16,8 +15,12 @@ class ReceiptsController < ApplicationController
     def show
       @user ||= current_user
       @receipt = @user.receipts.find(params[:id])
-      @note = @receipt.notes.build
-      @notes = @receipt.notes.all
+      # @note = @receipt.notes.build
+      # @notes = @receipt.notes.all
+      # @category = @receipt.categories.build
+      # @categories = @receipt.categories.all
+      # @item = @receipt.items.build
+      # @items = @receipt.items.all
     end
 
     def create
@@ -33,6 +36,6 @@ class ReceiptsController < ApplicationController
     private
 
     def receipt_params
-        params.require(:receipt).permit(:category_name, :store_name)
+        params.require(:receipt).permit(:store_id)
     end
 end

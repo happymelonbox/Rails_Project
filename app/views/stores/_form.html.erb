@@ -1,0 +1,25 @@
+<%= form_for(store) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :unit_or_building %>
+  <%= f.text_field :unit_or_building %><br>
+
+  <%= f.label :street_number %>
+  <%= f.text_field :street_number %><br>
+
+  <%= f.label :street_name %>
+  <%= f.text_field :street_name %><br>
+
+  <%= f.label :suburb %>
+  <%= f.text_field :suburb %><br>
+
+  <%= f.label :postcode %>
+  <%= f.number_field :postcode %><br>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <br>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

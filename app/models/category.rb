@@ -1,4 +1,6 @@
 class Category < ActiveRecord::Base
-    has_many :items
-    has_many :receipts
+    belongs_to :categorable, polymorphic: true
+    belongs_to :user
+
+
 end

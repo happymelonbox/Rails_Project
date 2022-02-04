@@ -4,6 +4,6 @@ class Item::NotesController < NotesController
     private
 
     def set_notable
-        @notable = Item.find(params[:receipt_id])
+        @notable = @user.items.find(params[:item_id])
     end
 end

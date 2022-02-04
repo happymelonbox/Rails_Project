@@ -8,8 +8,5 @@ class CreateReceipts < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :receipts, :store_id
-    add_index :receipts, :category_id
-    add_index :receipts, :user_id
   end
 end

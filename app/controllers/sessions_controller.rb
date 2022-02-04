@@ -1,22 +1,62 @@
 class SessionsController < ApplicationController
 
-    def create
-      @user = User.find_by(user_name: params[:user_name])
+  def new
+  end
 
-      if !!@user && @user.authenticate(params[:password])
-
-        session[:user_id] = @user.id
-        flash[:notice] = "Welcome back #{@user.first_name}"
-        redirect_to user_path(@user)
-      else
-        flash[:notice] = "Something went wrong! Make sure your username and password are correct"
-        redirect_to signin_path
-      end
+  def omniauth
+    puts "request.env[omniauth.auth]: #{request.env['omniauth.auth']}"
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+    if @user
+      session[:user_id] = @user.id
+      redirect_to 'http://localhost:3000/'
+    else
+      redirect_to '/login'
     end
+  end
 
-    def destroy
-      session[:user_id] = nil
-      redirect_to root_path
+  def create
+    @user = User.find_by(email: session_params[:email])
+    if @user && @user.authenticate(session_params[:password])
+      login!
+      render json: {
+        logged_in: true,
+        user: @user
+      }
+    else
+      render json: {
+        status: 401,
+        errors: ['no such user ', ' verify credentials and try again or signup']
+      }
     end
-  
+  end
+
+  def is_logged_in?
+    if logged_in? && current_user
+      render json: {
+        logged_in: true,
+        user: current_user
+      }
+
+    else
+      render json: {
+        logged_in: false,
+        message: 'no such user'
+      }
+    end
+  end
+
+  def destroy
+    logout!
+    render json: {
+      status: 200,
+      logged_out: true
+    }
+  end
+
+  private
+
+  def session_params
+    params.require(:user).permit(:username, :email, :password)
+  end
+
 end

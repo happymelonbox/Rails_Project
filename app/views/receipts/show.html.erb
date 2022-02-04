@@ -1,3 +1,4 @@
-<%= link_to "Add Note", new_note_path(receipt_id: @receipt.id) %>
+<%= render partial: "items/form", locals: {item: @receipt.items.build} %>
+<%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %>
 <%= render partial: "notes/notes", locals: {notes: @receipt.notes} %>
 <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>

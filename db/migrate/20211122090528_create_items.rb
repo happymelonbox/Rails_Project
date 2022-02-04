@@ -3,14 +3,11 @@ class CreateItems < ActiveRecord::Migration[6.1]
     create_table :items do |t|
       t.string :name
       t.float :price
-      t.integer :category_id
-      t.integer :store_id
-      t.integer :receipt_id
+      t.float :tax
+      t.references :itemable, polymorphic: true, index: true
+      t.integer :user_id
 
       t.timestamps
     end
-    add_index :items, :category_id
-    add_index :items, :store_id
-    add_index :items, :receipt_id
   end
 end

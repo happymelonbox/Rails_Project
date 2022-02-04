@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  root 'static#home'
+  root 'home#index'
   
-  get '/login' => 'sessions#login'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
-  get '/logout' => 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/logged_in', to: 'sessions#is_logged_in?'
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
+  post 'auth/:provider/callback', to: 'sessions#omniauth'
 
   resources :users
   resources :receipts
@@ -12,6 +14,15 @@ Rails.application.routes.draw do
   resources :categories
   resources :stores
   resources :notes
+
+
+  resources :categories do
+    resources :items, module: :categories
+  end
+
+  resources :categories do
+    resources :receipts, module: :categories
+  end
 
   resources :receipts do
     resources :notes, module: :receipts
@@ -21,4 +32,15 @@ Rails.application.routes.draw do
     resources :notes, module: :items
   end
 
+  resources :items do
+    resources :categories, module: :items
+  end
+
+  resources :receipts do
+    resources :categories, module: :receipts
+  end
+
+  resources :receipts do
+    resources :items, module: :receipts
+  end
 end

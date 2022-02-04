@@ -1,2 +1,1 @@
-<%= link_to "Back to receipts", receipts_path %>
-<%= link_to "Stores", stores_path %>
+<%= render partial: "stores/store", locals: {store: @store} %>
