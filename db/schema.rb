@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.string "suburb"
     t.integer "postcode"
     t.string "city"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
