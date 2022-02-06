@@ -8,7 +8,6 @@ class CreateStores < ActiveRecord::Migration[6.1]
       t.string :suburb
       t.integer :postcode
       t.string :city
-      t.integer :user_id
 
       t.timestamps
     end

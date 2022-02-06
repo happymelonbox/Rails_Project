@@ -6,6 +6,10 @@ class ItemsController < ApplicationController
         @item = @itemable.items.new
     end
 
+    def index
+        @items = current_user.items.all
+    end
+
     def create
         @item = Item.new(items_params)
         @item.user = current_user

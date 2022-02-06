@@ -1,9 +1,10 @@
-<h1>Your receipts</h1>
 <%= link_to("Add new receipt", new_receipt_path) %>
-<br>
+<h1>Your receipts</h1>
 <% @receipts.each do |receipt| %>
-    <%= link_to receipt.id, receipt_path(receipt.id) %>
-    <h4><%= receipt.store_name %></h4>
+    <%=receipt.id%> <%= link_to receipt.store_name, receipt_path(receipt.id) %>, <%=receipt.date.strftime("%B %d, %Y")%>, <%=receipt.time.strftime('%H:%M')%>
+    <% receipt.notes.each do |note|%>
+        <p><%= note.content %></p>
+    <% end %>
     <%= render partial: "categories/categories", locals: {categories: receipt.categories.all} %>
     <%= render partial: "categories/form", locals: {category: receipt.categories.build} %>
     <br>

@@ -6,6 +6,10 @@ class NotesController < ApplicationController
         @note = @notable.notes.new
     end
 
+    def index
+        @notes = current_user.notes.all
+    end
+
     def create
         @note = Note.new(note_params)
         @note.user = current_user

@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     end
 
     def index
-        @categories = @categorable.categories.all
+        @categories = current_user.categories.all
     end
 
     def create
