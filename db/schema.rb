@@ -14,12 +14,13 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.string "categorable_type"
     t.integer "categorable_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["categorable_type", "categorable_id"], name: "index_categories_on_categorable"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["itemable_type", "itemable_id"], name: "index_items_on_itemable"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["notable_type", "notable_id"], name: "index_notes_on_notable"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_receipts_on_user_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -63,8 +67,10 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.string "suburb"
     t.integer "postcode"
     t.string "city"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,4 +94,9 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
     t.string "provider"
   end
 
+  add_foreign_key "categories", "users"
+  add_foreign_key "items", "users"
+  add_foreign_key "notes", "users"
+  add_foreign_key "receipts", "users"
+  add_foreign_key "stores", "users"
 end

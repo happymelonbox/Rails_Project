@@ -1,7 +1,13 @@
+
 <h3><%= store.name %></h3>
-<h4><%= store.unit_or_building %></h4>
-<h4><%= store.street_number %></h4>
-<h4><%= store.street_name %></h4>
-<h4><%= store.suburb %></h4>
-<h4><%= store.postcode %></h4>
-<h4><%= store.city %></h4>
+<p><%= store.unit_or_building %><br/>
+<%= store.street_number %> <%= store.street_name %><br/>
+<%= store.suburb %><br/>
+<%= store.postcode %><br/>
+<%= store.city %></p>
+<% store.receipts.each do |receipt| %>
+    <%=receipt.id%> <%= link_to receipt.date.strftime("%B %d, %Y"), receipt_path(receipt.id) %>, <%=receipt.time.strftime('%H:%M')%>
+    <% receipt.notes.each do |note|%>
+        <p><%= note.content %></p>
+    <% end %>
+<%end%>

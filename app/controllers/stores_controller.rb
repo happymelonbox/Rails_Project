@@ -3,8 +3,7 @@ class StoresController < ApplicationController
     before_action :current_user, :only => [:show]
     
     def show
-        @user = current_user
-        @store = @user.stores.find(params[:id])
+        @store = Store.find(params[:id])
     end
 
     def index
