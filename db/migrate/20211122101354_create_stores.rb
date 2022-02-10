@@ -8,6 +8,7 @@ class CreateStores < ActiveRecord::Migration[6.1]
       t.string :suburb
       t.integer :postcode
       t.string :city
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps
     end

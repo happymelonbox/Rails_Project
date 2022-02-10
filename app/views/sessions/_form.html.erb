@@ -1,5 +1,5 @@
 <div>
-  <h2>Log In</h2>
+  <%=link_to 'Back', 'javascript:history.back()'%>
   <%= form_tag '/login' do %>
     Username: <%= text_field_tag :user_name %><br>
     Password: <%= password_field_tag :password %><br>

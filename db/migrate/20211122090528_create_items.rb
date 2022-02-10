@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.float :price
       t.float :tax
       t.references :itemable, polymorphic: true, index: true
-      t.integer :user_id
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps
     end

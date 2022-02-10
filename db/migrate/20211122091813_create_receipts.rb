@@ -6,7 +6,7 @@ class CreateReceipts < ActiveRecord::Migration[6.1]
       t.time :time
       t.integer :category_id
       t.float :total_price
-      t.integer :user_id
+      t.references :user, index: true, foreign_key: true
       
 
       t.timestamps

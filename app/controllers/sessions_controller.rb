@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user
       session[:user_id] = @user.id
-      redirect_to 'http://localhost:3000/receipts'
+      redirect_to receipts_path, notice: "Logged In!"
     else
       redirect_to '/login'
     end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user && @user.authenticate(session_params[:password])
       login!
-      redirect_to 'http://localhost:3000/receipts', notice: "Logged In!"
+      redirect_to receipts_path, notice: "Logged In!"
     else
       redirect_to 'http://localhost:3000/', notice: 'no such user, verify credentials and try again or signup'
     end
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def is_logged_in?
     if logged_in? && current_user
-      redirect_to 'http://localhost:3000/receipts'
+      redirect_to receipts_path, notice: "Logged In!"
     else
       redirect_to 'http://localhost:3000/', notice: "No such user!"
     end

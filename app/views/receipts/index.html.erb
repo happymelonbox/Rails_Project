@@ -1,12 +1,19 @@
 
 <%= link_to("Add new receipt", new_receipt_path) %>
-<h1>Your receipts</h1>
-<% @receipts.each do |receipt| %>
-    <%=receipt.id%> <%= link_to receipt.store_name, receipt_path(receipt.id) %>, <%=receipt.date.strftime("%B %d, %Y")%>, <%=receipt.time.strftime('%H:%M')%>
-    <% receipt.notes.each do |note|%>
-        <p><%= note.content %></p>
+<%= link_to "Log Out", logout_path, :method => :delete %>
+
+<h3>Hey <%= @user.first_name %></h3>
+<% if @receipts.length == 0 %>
+    <p>Please begin by adding a receipt</p>
+<% elsif @receipts.length > 0 %>
+    <h4>Your receipts</h4>
+    <% @receipts.each do |receipt| %>
+        <%=receipt.id%> <%= link_to receipt.store_name, receipt_path(receipt.id) %>, <%=receipt.date.strftime("%B %d, %Y")%>, <%=receipt.time.strftime('%H:%M')%>
+        <% receipt.notes.each do |note|%>
+            <p><%= note.content %></p>
+        <% end %>
+        <%= render partial: "categories/categories", locals: {categories: receipt.categories.all} %>
+        <%= render partial: "categories/form", locals: {category: receipt.categories.build} %>
+        <br>
     <% end %>
-    <%= render partial: "categories/categories", locals: {categories: receipt.categories.all} %>
-    <%= render partial: "categories/form", locals: {category: receipt.categories.build} %>
-    <br>
-<% end %>
+<%end%>

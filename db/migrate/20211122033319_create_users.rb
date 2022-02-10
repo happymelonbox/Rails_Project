@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :address_suburb
       t.string :address_city
       t.string :address_state
+      t.integer :address_postcode
       t.string :address_country
       t.string :email
       t.string :password_digest
