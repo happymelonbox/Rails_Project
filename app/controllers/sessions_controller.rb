@@ -18,39 +18,23 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user && @user.authenticate(session_params[:password])
       login!
-      render json: {
-        logged_in: true,
-        user: @user
-      }
+      redirect_to 'http://localhost:3000/receipts', notice: "Logged In!"
     else
-      render json: {
-        status: 401,
-        errors: ['no such user ', ' verify credentials and try again or signup']
-      }
+      redirect_to 'http://localhost:3000/', notice: 'no such user, verify credentials and try again or signup'
     end
   end
 
   def is_logged_in?
     if logged_in? && current_user
-      render json: {
-        logged_in: true,
-        user: current_user
-      }
-
+      redirect_to 'http://localhost:3000/receipts'
     else
-      render json: {
-        logged_in: false,
-        message: 'no such user'
-      }
+      redirect_to 'http://localhost:3000/', notice: "No such user!"
     end
   end
 
   def destroy
     logout!
-    render json: {
-      status: 200,
-      logged_out: true
-    }
+    redirect_to 'http://localhost:3000/', notice: "Logged Out!"
   end
 
   private
