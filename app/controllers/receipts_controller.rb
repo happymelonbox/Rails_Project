@@ -36,6 +36,6 @@ class ReceiptsController < ApplicationController
     private
 
     def receipt_params
-        params.require(:receipt).permit(:store_id, :date, :time)
+        params.require(:receipt).permit(:name, :date, :time)
     end
 end

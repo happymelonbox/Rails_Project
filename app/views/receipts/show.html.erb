@@ -1,6 +1,8 @@
 <%= link_to "Back to receipts", receipts_path %>
 <%= render partial: "items/form", locals: {item: @receipt.items.build} %>
-<%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %>
+<%if @receipt.items.size > 1 %>
+    <%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %>
+<%end%>
 <%= render partial: "notes/notes", locals: {notes: @receipt.notes} %>
 <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>
 <%= link_to @receipt.store.name, store_path(@receipt.store)%>

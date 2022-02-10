@@ -1,4 +1,4 @@
-
+<%if item.name && item.price > 0.00%>
     <ul><%= item.name %><br>
         <li>Price: $<%= item.price %></li>
         <li>Tax: $<%= item.tax %></li>
@@ -11,6 +11,4 @@
         <%= render partial: "notes/form", locals: {note: item.notes.build} %>
         </li>
     </ul>
-
-
-<%# work on the layout of the list... %>
+<% end %>

@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     private
 
     def category_params
-        params.require(:category).permit(:name, :categorable_type, :categorable_id, :receipt_id)
+        params.require(:category).permit(:name, :categorable_type, :categorable_id)
     end
 
 end
