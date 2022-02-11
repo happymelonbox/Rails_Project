@@ -115,6 +115,17 @@ input.google{
     margin-top: 2rem;
 }
 
+.stores_links_container{
+    height: 1rem;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
 .links{
     background-color:rgba(235, 224, 75, 0.95);
     color: rgb(3, 3, 3);
@@ -127,6 +138,22 @@ input.google{
     padding-bottom: 2px;
     display: block;
     float: left;
+    box-shadow: rgb(37, 37, 37) 1px 1.5px 1.5px;
+    border-radius: 8px;
+}
+
+.store_link{
+    background-color:rgba(235, 224, 75, 0.95);
+    color: rgb(3, 3, 3);
+    height: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 500;
+    width: 12rem;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    display: block;
     box-shadow: rgb(37, 37, 37) 1px 1.5px 1.5px;
     border-radius: 8px;
 }
