@@ -1,14 +1,11 @@
 <%if item.name && item.price > 0.00%>
-    <ul><%= item.name %><br>
-        <li>Price: $<%= item.price %></li>
-        <li>Tax: $<%= item.tax %></li>
-        <li>Categories for <%= item.name %>:
-        <%= render partial: "categories/categories", locals: {categories: item.categories}%>
-        <%= render partial: "categories/form", locals: {category: item.categories.build} %>
-        </li>
-        <li>Notes for <%= "#{item.name}" %>:
-        <%= render partial: "notes/notes", locals: {notes: item.notes} %>
-        <%= render partial: "notes/form", locals: {note: item.notes.build} %>
-        </li>
-    </ul>
+     <p><span class="items"><%= item.name %><br/>
+       Price: $<%= item.price %><br/>
+        Tax: $<%= item.tax %><br/>
+        </span>
+        <span class="items_notes">
+            <%= render partial: "notes/notes", locals: {notes: item.notes} %>
+            <%= render partial: "notes/form", locals: {note: item.notes.build} %>
+        </span>
+        </p>
 <% end %>

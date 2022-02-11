@@ -1,17 +1,19 @@
-<h3>Add an item</h3>
-<%= form_for(item) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<h3 class="banner">Add an item</h3>
+<div class="info form">
+  <%= form_for(item) do |f| %>
+    <%= f.label :name, class: "label" %>
+    <%= f.text_field :name , class: "input"%>
 
-  <%= f.label :price %>
-  <%= f.number_field :price, step: :any, placeholder: 0.00 %>
+    <%= f.label :price, class: "label" %>
+    <%= f.number_field :price, step: :any, placeholder: 0.00 , class: "input"%>
 
-  <%= f.label :tax %>
-  <%= f.number_field :tax, step: :any, placeholder: 0.00 %>
+    <%= f.label :tax, class: "label" %>
+    <%= f.number_field :tax, step: :any, placeholder: 0.00 , class: "input"%>
 
-  <%= f.hidden_field :itemable_id %>
-  <%= f.hidden_field :itemable_type %>
+    <%= f.hidden_field :itemable_id %>
+    <%= f.hidden_field :itemable_type %>
 
-  <br>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+    <br>
+    <%= f.submit class: "submit_item" %>
+  <% end %>
+</div>

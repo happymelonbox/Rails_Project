@@ -14,7 +14,7 @@ class NotesController < ApplicationController
         @note = Note.new(note_params)
         @note.user = current_user
         @note.save
-        redirect_to polymorphic_path(@note.notable), notice: "Noted"
+        redirect_back(fallback_location: root_path)
     end
 
     def show

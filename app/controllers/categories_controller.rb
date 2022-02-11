@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
        @category = Category.new(category_params)
        @category.user = current_user
        @category.save
-       redirect_to polymorphic_path(@category.categorable), notice: "Category Created"
+       redirect_back(fallback_location: root_path)
     end
 
     def show

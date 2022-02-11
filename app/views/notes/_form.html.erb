@@ -1,10 +1,9 @@
-
-<%= form_for(note) do |f| %>
-  <div class="form-group">
-    <%= f.text_area :content, class: "form-control", placeholder: "Make a note" %>
-    <%= f.hidden_field :notable_id %>
-    <%= f.hidden_field :notable_type %>
-  </div>
-  <%= f.submit class: "btn btn-primary" %>
-  
-<% end %>
+<div class="info form">
+  <%= form_for(note) do |f| %>
+      <%= f.label :make_a_note, class: "label"%>
+      <%= f.text_area :content, class: "input" %>
+      <%= f.hidden_field :notable_id %>
+      <%= f.hidden_field :notable_type %>
+      <%= f.submit class: "submit" %>
+  <% end %>
+</div>

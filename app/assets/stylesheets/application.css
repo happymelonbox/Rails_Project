@@ -240,6 +240,18 @@ input.submit{
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
     margin-bottom: 2rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+input.submit_item{
+    text-align: center;
+    margin-top: 2rem;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a.links_to_ind{
@@ -266,6 +278,30 @@ li{
 }
 
 .add_ons{
+    float: right;
+    width: 50%;
+    margin-top: 0;
+}
+
+.items{
     float: left;
+    width: 40%;
+}
+
+.items_notes{
+    float: right;
+    width: 30%;
+    margin-right: 1rem;
+}
+
+.receipt_notes{
+    float: left;
+    width: 35%;
+    margin-top: 1rem;
+}
+
+.receipt_store_name{
+    float: right;
     width: 50%;
 }
+
