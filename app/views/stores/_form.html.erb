@@ -1,25 +1,27 @@
-<%= form_for(store) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+<div class="info form">
+  <%= form_for(store) do |f| %>
+    <%= f.label :name, class: "label"%>
+    <%= f.text_field :name, class: "input" %><br>
 
-  <%= f.label :unit_or_building %>
-  <%= f.text_field :unit_or_building %><br>
+    <%= f.label :unit_or_building, class: "label"%>
+    <%= f.text_field :unit_or_building, class: "input" %><br>
 
-  <%= f.label :street_number %>
-  <%= f.text_field :street_number %><br>
+    <%= f.label :street_number, class: "label"%>
+    <%= f.text_field :street_number, class: "input" %><br>
 
-  <%= f.label :street_name %>
-  <%= f.text_field :street_name %><br>
+    <%= f.label :street_name, class: "label"%>
+    <%= f.text_field :street_name, class: "input" %><br>
 
-  <%= f.label :suburb %>
-  <%= f.text_field :suburb %><br>
+    <%= f.label :suburb, class: "label"%>
+    <%= f.text_field :suburb, class: "input" %><br>
 
-  <%= f.label :postcode %>
-  <%= f.number_field :postcode %><br>
+    <%= f.label :postcode, class: "label"%>
+    <%= f.number_field :postcode, class: "input" %><br>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+    <%= f.label :city, class: "label"%>
+    <%= f.text_field :city, class: "input" %>
 
-  <br>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+    <br>
+    <%= f.submit class: "submit" %>
+  <% end %>
+</div>

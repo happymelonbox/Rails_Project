@@ -1,6 +1,8 @@
-<div class="link_container">
-    <%=link_to 'Back', 'javascript:history.back()'%>
+<div class="links_container">
+    <%=link_to 'Back', 'javascript:history.back()', class: "links"%>
 </div>
 <div class="container">
+    <h3 class="banner">Add a new store</h3>
+
     <%= render partial: "stores/form",locals:{store: @store} %>
 </div>
