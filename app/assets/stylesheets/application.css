@@ -8,6 +8,12 @@ html{
 
 }
 
+.notice{
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+    width:6.5rem;
+}
+
 .container{
     width: 25rem;
     height: 25rem;
@@ -26,10 +32,12 @@ html{
 a{
     text-decoration: none;
     font-weight: normal;
+    cursor: pointer;
 }
 a:visited{
     text-decoration: none;
     font-weight: normal;
+    cursor: pointer;
 }
 
 .navbar{
@@ -127,4 +135,20 @@ input.google{
 
 .info{
     padding-top: 1rem;
+}
+
+.extra_info{
+    font-size: 0.5rem;
+}
+
+a.extra_info_link{
+    font-size: 0.5rem;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+}
+
+a.extra_info_link:visited{
+    font-size: 0.5rem;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
 }

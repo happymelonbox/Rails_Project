@@ -1,15 +1,15 @@
-
+<div class="form">
 <%= form_for(receipt) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :receipt_name %>
+  <%= f.text_field :name %><br/>
   <%= f.label :store_name %>
   <%= f.collection_select :store_id, Store.all, :id, :name %><br>
-  <p> If the store you require is not present in the dropdown list, you can add a new store here.</p>
-  <%= link_to "Add store", new_store_path %><br>
+  <p class="extra_info"> If the store you require is not present in the dropdown list, you can add a new store <%= link_to "here", new_store_path, class: "extra_info_link" %>.</p>
   <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date %><br/>
   <%= f.label :time %>
-  <%= f.time_field :time %>
+  <%= f.time_field :time %><br/>
 
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+</div>
