@@ -27,6 +27,8 @@ html{
     display: block;
     text-align: center;
     border-radius: 8px;
+    box-sizing: content-box;
+    overflow: scroll;
 }
 
 a{
@@ -139,6 +141,7 @@ input.google{
 
 .extra_info{
     font-size: 0.5rem;
+    clear: both;
 }
 
 a.extra_info_link{
@@ -155,22 +158,46 @@ a.extra_info_link:visited{
 }
 
 .form{
-    width: 80%;
+    width: 85%;
     position: relative;
     margin: auto;
+    overflow: scroll;
 }
 
 .label{
     float: left;
     width: 45%;
     text-align: left;
+    padding: 0;
+    height: 20px;
 }
 
 .input{
     float: right;
-    width: 50%;
+    width: 50.5%;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
+}
+
+.name{
+    font-size: 15px;
+}
+
+.store_label{
+    padding-top: 5px;
+}
+
+.time_label{
+    padding-top: 3px;
+}
+
+.date_label{
+    padding-top: 1px;
+}
+
+.date, .time{ 
+    width: 51%;
+    margin-bottom: 3px;
 }
 
 select.input{
@@ -178,10 +205,12 @@ select.input{
     font-size: 0.85rem;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
+    margin-bottom: 1px;
 }
 input.submit{
     text-align: center;
     margin-top: 2rem;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
+    margin-bottom: 2rem;
 }

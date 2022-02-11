@@ -1,8 +1,7 @@
-<div>
-  <%=link_to 'Back', 'javascript:history.back()'%>
+<div class="info form">
   <%= form_tag '/login' do %>
-    Username: <%= text_field_tag :user_name %><br>
-    Password: <%= password_field_tag :password %><br>
-    <%= submit_tag "Log In" %>
+    <label class="label">Username: </label><%= text_field_tag :user_name, "", class: "input"%><br>
+    <label class="label">Password: </label><%= password_field_tag :password, "", class: "input" %><br>
+    <%= submit_tag "Log In", class: "submit" %>
   <% end %>
 </div>

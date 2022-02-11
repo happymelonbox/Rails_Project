@@ -1,14 +1,15 @@
 <div class="info form">
 <%= form_for(receipt) do |f| %>
-  <%= f.label :receipt_name, class: "label"%>
-  <%= f.text_field :name, class: "input"%><br/>
-  <%= f.label :store, class: "label"%>
+  <%= f.label :receipt_name, class: "label name_label"%>
+  <%= f.text_field :name, class: "input name"%><br/>
+  <%= f.label :date, class: "label date_label"%>
+  <%= f.date_field :date, class: "input date" %><br/>
+  <%= f.label :time, class: "label time_label"%>
+  <%= f.time_field :time, class: "input time"%><br/>
+  <%= f.label :store, class: "label store_label"%>
   <%= f.collection_select :store_id, Store.all, :id, :name, {include_blank: "Select a store..."}, {class: "input"}%><br>
   <p class="extra_info"> If the store you require is not present in the dropdown list, you can add a new store <%= link_to "here", new_store_path, class: "extra_info_link" %>.</p>
-  <%= f.label :date, class: "label"%>
-  <%= f.date_field :date, class: "input" %><br/>
-  <%= f.label :time, class: "label"%>
-  <%= f.time_field :time, class: "input"%><br/>
+  
 
   <%= f.submit class: "submit" %>
 <% end %>
