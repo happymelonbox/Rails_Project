@@ -1,3 +1,16 @@
-<% @stores.each do |store| %>
-    <%= link_to store.name, store_path(store)%>
-<% end %>
+<div class="links_container">
+    <%= link_to "Back to receipts", receipts_path, class: "links"%>
+    <%= link_to "Add a store", new_store_path, class: "links"%>
+</div>
+<div class="container">
+    <div class="body">
+        <h3 class="banner">Stores</h3>
+        <% if @stores.length == 0 %>
+            <p class="info">There are no stores currently listed</p>
+        <% elsif @receipts.length > 0 %>
+            <% @stores.each do |store| %>
+                <%= link_to store.name, store_path(store)%>
+            <% end %>
+        <% end %>
+
+</div>
