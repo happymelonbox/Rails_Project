@@ -214,3 +214,11 @@ input.submit{
     color: rgba(46, 156, 252, 0.8);
     margin-bottom: 2rem;
 }
+
+a.links_to_ind{
+    color: rgba(235, 224, 75, 0.95);
+}
+
+a.links_to_ind:visited{
+    color: rgba(235, 224, 75, 0.95);
+}

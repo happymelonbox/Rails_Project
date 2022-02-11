@@ -11,13 +11,15 @@
         <% elsif @receipts.length > 0 %>
             <h4 class="info">Your receipts:</h4>
             <% @receipts.each do |receipt| %>
-                <%=receipt.id%> <%= link_to receipt.store_name, receipt_path(receipt.id) %>, <%=receipt.date.strftime("%B %d, %Y")%>, <%=receipt.time.strftime('%H:%M')%>
-                <% receipt.notes.each do |note|%>
-                    <p><%= note.content %></p>
-                <% end %>
-                <%= render partial: "categories/categories", locals: {categories: receipt.categories.all} %>
-                <%= render partial: "categories/form", locals: {category: receipt.categories.build} %>
-                <br>
+                <div>
+                    <%=receipt.id%> <%= link_to "#{receipt.id} - #{receipt.store_name} - #{receipt.date.strftime("%B %d, %Y")} -  #{receipt.time.strftime('%H:%M')}", receipt_path(receipt.id) %>
+                    <% receipt.notes.each do |note|%>
+                        <p><%= note.content %></p>
+                    <% end %>
+                    <%= render partial: "categories/categories", locals: {categories: receipt.categories.all} %>
+                    <%= render partial: "categories/form", locals: {category: receipt.categories.build} %>
+                    <br/>
+                </div>
             <% end %>
         <%end%>
     </div>

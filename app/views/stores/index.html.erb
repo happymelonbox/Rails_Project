@@ -5,12 +5,14 @@
 <div class="container">
     <div class="body">
         <h3 class="banner">Stores</h3>
-        <% if @stores.length == 0 %>
+        <% if @stores.size == 0 %>
             <p class="info">There are no stores currently listed</p>
-        <% elsif @receipts.length > 0 %>
+        <% elsif @stores.size > 0 %>
             <% @stores.each do |store| %>
-                <%= link_to store.name, store_path(store)%>
+            <div>
+                <%= link_to "#{store.name} - #{store.suburb}", store_path(store), class: "links_to_ind"%>
+            </div>
             <% end %>
         <% end %>
-
+    </div>
 </div>

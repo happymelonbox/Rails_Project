@@ -20,7 +20,7 @@ class StoresController < ApplicationController
         @user ||= current_user
         @store = @user.stores.new(store_params)
         if @store.save
-            redirect_to store_path(@store)
+            redirect_to stores_path
         else
             render :new
         end
