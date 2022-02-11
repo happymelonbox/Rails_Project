@@ -145,10 +145,43 @@ a.extra_info_link{
     font-size: 0.5rem;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
+
 }
 
 a.extra_info_link:visited{
     font-size: 0.5rem;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+}
+
+.form{
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+.label{
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+.input{
+    float: right;
+    width: 50%;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+}
+
+select.input{
+    width: 52%;
+    font-size: 0.85rem;
+    background-color: rgba(235, 224, 75, 0.95);
+    color: rgba(46, 156, 252, 0.8);
+}
+input.submit{
+    text-align: center;
+    margin-top: 2rem;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
 }
