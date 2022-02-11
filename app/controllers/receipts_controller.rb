@@ -29,13 +29,13 @@ class ReceiptsController < ApplicationController
       if @receipt.save
         redirect_to receipt_path(@receipt)
       else
-        render :new
+        render :new, notice: "Receipt not saved, please try again"
       end
     end
 
     private
 
     def receipt_params
-        params.require(:receipt).permit(:name, :date, :time)
+        params.require(:receipt).permit(:name, :date, :time, :store_id)
     end
 end

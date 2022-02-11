@@ -1,13 +1,13 @@
 
-<h3><%= store.name %></h3>
-<p><%= store.unit_or_building %><br/>
+<h3 class="banner"><%= store.name %></h3>
+<p class="info"><%= store.unit_or_building %><br/>
 <%= store.street_number %> <%= store.street_name %><br/>
 <%= store.suburb %><br/>
 <%= store.postcode %><br/>
 <%= store.city %></p>
+<p class="info"><span class="underline">Receipts from this store</span></p>
 <% store.receipts.each do |receipt| %>
-    <%=receipt.id%> <%= link_to receipt.date.strftime("%B %d, %Y"), receipt_path(receipt.id) %>, <%=receipt.time.strftime('%H:%M')%>
-    <% receipt.notes.each do |note|%>
-        <p><%= note.content %></p>
-    <% end %>
+    <div class="info">
+        <%= link_to "#{receipt.id} #{receipt.date.strftime("%B %d, %Y")} #{receipt.time.strftime('%H:%M')}", receipt_path(receipt.id), class: "links_to_ind" %>
+    </div>
 <%end%>

@@ -244,8 +244,28 @@ input.submit{
 
 a.links_to_ind{
     color: rgba(235, 224, 75, 0.95);
+    width: 100%;
 }
 
 a.links_to_ind:visited{
     color: rgba(235, 224, 75, 0.95);
+    width: 100%;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    padding: 0;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.add_ons{
+    float: left;
+    width: 50%;
 }

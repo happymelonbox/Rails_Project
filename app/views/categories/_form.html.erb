@@ -1,9 +1,9 @@
-<%= form_for(category) do |f| %>
-  <div class="form-group">
-    <%= f.text_area :name, class: "form-control", placeholder: "Assign a category" %>
-    <%= f.hidden_field :categorable_id %>
-    <%= f.hidden_field :categorable_type %>
-  </div>
-  <%= f.submit class: "btn btn-primary" %>
-  
-<% end %>
+<div class="info form">
+  <%= form_for(category) do |f| %>
+      <%= f.label :category_name, class: "category_label"%>
+      <%= f.text_area :name, class: "category_input" %>
+      <%= f.hidden_field :categorable_id %>
+      <%= f.hidden_field :categorable_type %>
+    <%= f.submit class: "submit" %>
+  <% end %>
+</div>
