@@ -1,13 +1,8 @@
 
- <div class="home_container">
-    <div class="navbar">
-        <h2 class='logo'>Spendr</h2>
-    </div>
-    <br><br>
-    <h3><%= link_to('Sign Up', new_user_path, id: "Sign Up") %></h3>
-    <br>
-    <h3><%= link_to('Log In', login_path, id: "Log In") %></h3>
-    <div class="google_container">
-        <%= button_to 'Sign in via Google', '/auth/google_oauth2', class: 'google' %>
+ <div class="container">
+    <div class="links_container">
+        <%= link_to('Sign Up', new_user_path, id: "Sign Up", class: 'home_links') %>
+        <%= link_to('Log In', login_path, id: "Log In", class: 'home_links') %>
+        <%= button_to 'Google Sign-In', '/auth/google_oauth2', class: 'google' %>
     </div>
 </div>

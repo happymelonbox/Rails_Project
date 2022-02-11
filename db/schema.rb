@@ -48,14 +48,18 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
   end
 
   create_table "receipts", force: :cascade do |t|
-    t.integer "store_id"
+    t.string "name"
     t.date "date"
     t.time "time"
-    t.integer "category_id"
     t.float "total_price"
     t.integer "user_id"
+    t.integer "store_id"
+    t.string "categorable_type"
+    t.integer "categorable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["categorable_type", "categorable_id"], name: "index_receipts_on_categorable"
+    t.index ["store_id"], name: "index_receipts_on_store_id"
     t.index ["user_id"], name: "index_receipts_on_user_id"
   end
 
@@ -97,6 +101,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_105719) do
   add_foreign_key "categories", "users"
   add_foreign_key "items", "users"
   add_foreign_key "notes", "users"
+  add_foreign_key "receipts", "stores"
   add_foreign_key "receipts", "users"
   add_foreign_key "stores", "users"
 end

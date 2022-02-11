@@ -1,5 +1,7 @@
 
 <%= form_for(receipt) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <%= f.label :store_name %>
   <%= f.collection_select :store_id, Store.all, :id, :name %><br>
   <p> If the store you require is not present in the dropdown list, you can add a new store here.</p>
