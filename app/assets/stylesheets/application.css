@@ -29,6 +29,7 @@ html{
     border-radius: 8px;
     box-sizing: content-box;
     overflow: scroll;
+    clear: both;
 }
 
 a{
@@ -305,9 +306,5 @@ li{
     width: 50%;
 }
 
-@media only screen and (min-width: 1500px) {
-    .container{
-        clear:both
-    }
-}
+
 
