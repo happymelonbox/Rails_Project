@@ -1,7 +1,11 @@
 <div class="info form">
-  <%= form_tag '/login' do %>
-    <label class="label">Username: </label><%= text_field_tag :user_name, "", class: "input"%><br>
-    <label class="label">Password: </label><%= password_field_tag :password, "", class: "input" %><br>
-    <%= submit_tag "Log In", class: "submit" %>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :username, class: "label"%>
+    <%= f.text_field :username, class: "input"%>
+
+    <%= f.label :password, class: "label"%>
+    <%= f.password_field :password, class: "input"%>
+    
+    <%= f.submit "Log In", class: "submit" %>
   <% end %>
 </div>

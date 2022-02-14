@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logout!
-    session.clear
+    session.delete(:user_id)
+    @current_user = nil
   end
 
   def authentication_redirect

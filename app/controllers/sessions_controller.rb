@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: session_params[:email])
-    if @user && @user.authenticate(session_params[:password])
+    @user = User.find_by(username: params[:session][:username])
+    if @user && @user.authenticate(params[:session][:password])
       login!
       redirect_to receipts_path, notice: "Logged In!"
     else
@@ -35,12 +35,6 @@ class SessionsController < ApplicationController
   def destroy
     logout!
     redirect_to 'http://localhost:3000/', notice: "Logged Out!"
-  end
-
-  private
-
-  def session_params
-    params.require(:user).permit(:username, :email, :password)
   end
 
 end

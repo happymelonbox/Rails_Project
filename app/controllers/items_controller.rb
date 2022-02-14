@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
         @item = Item.new(items_params)
         @item.user = current_user
         if @item.save
-        redirect_back(fallback_location: root_path)
+            redirect_back(fallback_location: root_path)
         else
             render :new, notice: "Please fill in all fields"
         end
