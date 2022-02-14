@@ -3,15 +3,22 @@
 </div>
 <div class="container">
     <h4 class="banner"><%=@receipt.name%></h4>
-    <div class="receipt_notes">
-        <%= render partial: "notes/notes", locals: {notes: @receipt.notes} %>
-    </div>
-    <div class="receipt_store_name">
+    <div >
         <p><span class="underline">Store name</span><br/>
             <%= link_to @receipt.store.name, store_path(@receipt.store), class:"links_to_ind"%>
         </p>
     </div>
-    <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>
+    <div class="receipt_details">
+        <div class="receipt_notes">
+            <%= render partial: "notes/notes", locals: {notes: @receipt.notes} %>
+        </div>
+        <div class="receipt_categories">
+            <%= render partial: "categories/categories", locals: {categories: @receipt.categories} %>
+        </div>
+        <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>
+    </div>
+    
+    
     <%= render partial: "items/form", locals: {item: @receipt.items.build} %>
     <div>
         <%if @receipt.items.size > 1 %>
