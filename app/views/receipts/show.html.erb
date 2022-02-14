@@ -16,9 +16,8 @@
             <%= render partial: "categories/categories", locals: {categories: @receipt.categories} %>
         </div>
         <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>
+        <%= render partial: "categories/form", locals: {category: @receipt.categories.build}%>
     </div>
-    
-    
     <%= render partial: "items/form", locals: {item: @receipt.items.build} %>
     <div>
         <%if @receipt.items.size > 1 %>

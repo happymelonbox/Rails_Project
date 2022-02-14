@@ -5,7 +5,17 @@ html{
     font-family: 'Montserrat', sans-serif;
     top: 0;
     left: 0;
+    margin: 0;
+    padding: 0;
+    
+}
 
+body{
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 950px;
 }
 
 .notice{
@@ -15,21 +25,24 @@ html{
 }
 
 .container{
-    width: 25rem;
-    height: 25rem;
+    width: 75%;
+    height: 70%;
     background-color: rgba(46, 156, 252, 0.8);
     color:rgba(235, 224, 75, 0.95);
     position: relative;
-    top: 0;
-    left: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1%;
     display: block;
     text-align: center;
     border-radius: 8px;
     box-sizing: content-box;
     overflow: scroll;
     clear: both;
+}
+
+.body{
+    margin-top: 3%;
 }
 
 a{
@@ -44,30 +57,75 @@ a:visited{
 }
 
 .navbar{
-    height: 15%;
     top: 0;
     left: 0;
+    height: 17%;
     position: relative;
+}
+
+.logo_container{
+    width: 30%;
+    position: relative;
+    display: block;
+    padding-top: 1rem;
+    padding-left: 5%;
+    float: left;
+}
+
+.logged_out_logo_container{
+    width: 30%;
+    position: relative;
+    display: block;
+    padding-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* float: left; */
+}
+
+.right_links{
+    width: 30%;
+    float: right;
+}
+
+.left_links{
+    width: 30%;
+    float: left;
 }
 
 .logo{
     color: rgba(235, 224, 75, 0.95);
-    top: 0;
-    left: 0;
+    font-size: 3rem;
+    font-weight: bold;
     text-align: center;
-    position: relative;
-    display: block;
-    padding-top: 5%;
+}
+
+.stores_link{
+    float: right;
+}
+
+.receipts_link{
+    float: right;
+}
+
+.logout_link{
+    float: left;
 }
 
 /* ################ HOME ################ */
 
 .home_links_container{
-    padding-top: 15%;
-    margin-top: 15%;
+    width: 25%;
+    height: 25%;
+    margin-top: 12%;
+    padding: 3% 1% 8% 1%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     position: relative;
     display: block;
+    background-color: rgba(240, 248, 255, 0.301);
+    border-radius: 5%;
+    
 }
 
 .home_links{
@@ -131,17 +189,25 @@ input.google{
     background-color:rgba(235, 224, 75, 0.95);
     color: rgb(3, 3, 3);
     height: 1.5rem;
-    margin-left: .3rem;
     font-size: 20px;
     font-weight: 500;
-    width: 12rem;
+    width: 38%;
+    text-align: center;
     padding-top: 6px;
     padding-bottom: 2px;
     display: block;
-    float: left;
     box-shadow: rgb(37, 37, 37) 1px 1.5px 1.5px;
     border-radius: 8px;
 }
+
+.receipts_link, .stores_link{
+    margin: 1rem 1rem
+}
+
+.logout_link{
+    margin: 1rem 10rem 2rem 1rem
+}
+
 
 .store_link{
     background-color:rgba(235, 224, 75, 0.95);
@@ -279,7 +345,10 @@ li{
 }
 
 /* .add_ons{
-
+    text-align: right;
+    width: 50%;
+    margin-top: 0;
+} */
 
 .items{
     float: left;

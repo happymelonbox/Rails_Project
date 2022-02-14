@@ -1,8 +1,5 @@
 
-<div class="links_container">
-    <%= link_to "Log Out", logout_path, :method => :delete, class: "links" %>
-    <%= link_to "Add new receipt", new_receipt_path, locals: {user: @user}, class: "links" %>
-</div>
+
 <div class="container">
     <div class="body">
         <h3 class="banner" >Hey <%= @user.first_name %></h3>
@@ -20,7 +17,4 @@
             <% end %>
         <%end%>
     </div>
-</div>
-<div class="stores_links_container">
-    <%= link_to "Stores", stores_path, class: "store_link"%>
-</div>
+</div> 
