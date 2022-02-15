@@ -32,7 +32,6 @@ body{
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1%;
     display: block;
     text-align: center;
     border-radius: 8px;
@@ -40,6 +39,24 @@ body{
     overflow: scroll;
     clear: both;
 }
+
+.inner_container{
+    width: 50%;
+    height: 70%;
+    background-color: rgba(46, 156, 252, 0.8);
+    color:rgba(235, 224, 75, 0.95);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: content-box;
+    overflow: scroll;
+    clear: both;
+}
+
 
 .body{
     margin-top: 3%;
@@ -164,14 +181,12 @@ input.google{
 /* ################ Receipts ################ */
 
 .links_container{
-    height: 1rem;
     text-align: center;
     position: relative;
     display: block;
-    width: 25rem;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem;
 }
 
 .stores_links_container{
@@ -191,7 +206,22 @@ input.google{
     height: 1.5rem;
     font-size: 20px;
     font-weight: 500;
-    width: 38%;
+    width: 12%;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    display: block;
+    box-shadow: rgb(37, 37, 37) 1px 1.5px 1.5px;
+    border-radius: 8px;
+}
+
+.nav_links{
+    background-color:rgba(235, 224, 75, 0.95);
+    color: rgb(3, 3, 3);
+    height: 1.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    width: 32%;
     text-align: center;
     padding-top: 6px;
     padding-bottom: 2px;
@@ -230,7 +260,7 @@ input.google{
 }
 
 .info{
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
 .extra_info{
@@ -254,6 +284,7 @@ a.extra_info_link:visited{
 .form{
     width: 85%;
     position: relative;
+
     margin: auto;
     overflow: scroll;
 }
@@ -302,14 +333,13 @@ select.input{
     margin-bottom: 1px;
 }
 input.submit{
-    text-align: center;
     margin-top: 2rem;
     background-color: rgba(235, 224, 75, 0.95);
     color: rgba(46, 156, 252, 0.8);
     margin-bottom: 2rem;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 39%;
+    margin-right: 39%;
 }
 input.submit_item{
     text-align: center;
@@ -344,11 +374,11 @@ li{
     text-decoration: underline;
 }
 
-/* .add_ons{
+.add_ons{
     text-align: right;
     width: 50%;
     margin-top: 0;
-} */
+}
 
 .items{
     float: left;

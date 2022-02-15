@@ -2,7 +2,9 @@
     <%=link_to 'Back', 'javascript:history.back()', class: "links"%>
 </div>
 <div class="container">
-    <h3 class="banner">Sign up to Spendr</h3>
+    <div class="inner_container">
+        <h3 class="banner">Sign up to Spendr</h3>
 
-    <%= render 'form', user: @user %>
+        <%= render 'form', user: @user %>
+    </div>
 </div>

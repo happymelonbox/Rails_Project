@@ -1,14 +1,14 @@
 <div class="navbar">
     <% if logged_in? %>
         <div class="left_links">
-            <%= link_to "Log Out", logout_path, :method => :delete, class: "links logout_link" %>
+            <%= link_to "Log Out", logout_path, :method => :delete, class: "nav_links logout_link" %>
         </div>
         <div class="logo_container">
             <%= render "layouts/logo" %>
         </div>
         <div class="right_links">
-            <%= link_to "Add new receipt", new_receipt_path, locals: {user: @user}, class: "links receipts_link" %>
-            <%= link_to "Stores", stores_path, class: "links stores_link"%>
+            <%= link_to "Add new receipt", new_receipt_path, locals: {user: @user}, class: "nav_links receipts_link" %>
+            <%= link_to "Stores", stores_path, class: "nav_links stores_link"%>
         </div>
     <% else %>
         <div class="logged_out_logo_container">
