@@ -24,8 +24,8 @@
                         <td><%= link_to receipt.store_name, receipt_path(receipt.id), class:"links_to_ind" %></td>
                         <td><%= link_to receipt.date.strftime("%B %d, %Y"), receipt_path(receipt.id), class:"links_to_ind" %></td>
                         <td><%= link_to receipt.time.strftime('%H:%M'), receipt_path(receipt.id), class:"links_to_ind" %></td>
-                        <td><%= render partial: "categories/categories", locals: {categories: receipt.categories.all}%></td>
-                        <td><%= render partial: "notes/notes", locals: {notes: receipt.notes.all} %></td>
+                        <td><%= render partial: "categories/category", collection: receipt.categories.all, as: :category %></td>
+                        <td><%= render partial: "notes/note", collection: receipt.notes.all, as: :note %></td>
                         </div>
                     <% end %>
             </table>

@@ -354,11 +354,17 @@ input.submit_item{
 a.links_to_ind{
     color: rgba(235, 224, 75, 0.95);
     width: 100%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 a.links_to_ind:visited{
     color: rgba(235, 224, 75, 0.95);
     width: 100%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 ul{
@@ -411,5 +417,24 @@ li{
     margin: auto;
 }
 
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    border-spacing: 30px;
+    width: 90%;
+}
+
+th{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 10%;
+}
+
+td{
+    font-size: 0.8rem;
+    width: 10%;
+}
 
 
