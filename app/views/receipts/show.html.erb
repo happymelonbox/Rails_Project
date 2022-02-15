@@ -3,26 +3,30 @@
 </div>
 <div class="container">
     <h4 class="banner"><%=@receipt.name%></h4>
-    <div >
-        <p><span class="underline">Store name</span><br/>
-            <%= link_to @receipt.store.name, store_path(@receipt.store), class:"links_to_ind"%>
-        </p>
-    </div>
-    <div class="receipt_details">
-        <div class="receipt_notes">
-            <%= render partial: "notes/notes", locals: {notes: @receipt.notes} %>
-        </div>
-        <div class="receipt_categories">
-            <%= render partial: "categories/categories", locals: {categories: @receipt.categories} %>
-        </div>
-        <%= render partial: "notes/form", locals: {note: @receipt.notes.build} %>
-        <%= render partial: "categories/form", locals: {category: @receipt.categories.build}%>
-    </div>
+    <table>
+        <tr>
+            <th>Store Name</th>
+            <th>Notes</th>
+            <th>Make a note</th>
+            <th>Categories</th>
+            <th>Add a Category</th>
+        </tr>
+        <tr>
+            <td><%= link_to @receipt.store.name, store_path(@receipt.store), class:"links_to_ind"%></td>
+            <td><%= render partial: "notes/note", collection: @receipt.notes.all, as: :note %></td>
+            <td><%= render partial: "notes/form", locals: {note: @receipt.notes.build} %></td>
+            <td><%= render partial: "categories/category", collection: @receipt.categories.all, as: :category %></td>
+            <td><%= render partial: "categories/form", locals: {category: @receipt.categories.build} %></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <%if @receipt.items.size > 1 %>
+                <td colspan=3><%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %></td>
+            <%end%>
+        </tr>
+    </table>
     <%= render partial: "items/form", locals: {item: @receipt.items.build} %>
     <div>
-        <%if @receipt.items.size > 1 %>
-            <%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %>
-        <%end%>
     </div>
-    
 </div>

@@ -1,7 +1,6 @@
 <div class="info form">
   <%= form_for(note) do |f| %>
-      <%= f.label :make_a_note, class: "label"%>
-      <%= f.text_area :content, class: "input" %>
+      <%= f.text_area :content, class: "table_input" %>
       <%= f.hidden_field :notable_id %>
       <%= f.hidden_field :notable_type %>
       <%= f.submit class: "submit" %>

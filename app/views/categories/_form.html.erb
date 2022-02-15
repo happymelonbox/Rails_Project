@@ -1,7 +1,6 @@
 <div class="info form">
   <%= form_for(category) do |f| %>
-      <%= f.label :Add_a_category, class: "label"%>
-      <%= f.text_area :name, class: "input" %>
+      <%= f.text_area :name, class: "table_input" %>
       <%= f.hidden_field :categorable_id %>
       <%= f.hidden_field :categorable_type %>
     <%= f.submit class: "submit" %>
