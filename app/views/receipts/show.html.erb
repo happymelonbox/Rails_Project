@@ -5,28 +5,48 @@
     <h4 class="banner"><%=@receipt.name%></h4>
     <table>
         <tr>
+            <th colspan=5>Receipt details</th>
+        </tr>
+        <tr>
             <th>Store Name</th>
-            <th>Notes</th>
-            <th>Make a note</th>
             <th>Categories</th>
             <th>Add a Category</th>
+            <th>Notes</th>
+            <th colspan=2>Make a note</th>
+
         </tr>
         <tr>
             <td><%= link_to @receipt.store.name, store_path(@receipt.store), class:"links_to_ind"%></td>
-            <td><%= render partial: "notes/note", collection: @receipt.notes.all, as: :note %></td>
-            <td><%= render partial: "notes/form", locals: {note: @receipt.notes.build} %></td>
             <td><%= render partial: "categories/category", collection: @receipt.categories.all, as: :category %></td>
             <td><%= render partial: "categories/form", locals: {category: @receipt.categories.build} %></td>
+            <td><%= render partial: "notes/note", collection: @receipt.notes.all, as: :note %></td>
+            <td colspan=2><%= render partial: "notes/form", locals: {note: @receipt.notes.build} %></td>
+
         </tr>
-    </table>
-    <table>
         <tr>
-            <%if @receipt.items.size > 1 %>
-                <td colspan=3><%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %></td>
-            <%end%>
+            <th colspan=5>Receipt items</th>
         </tr>
-    </table>
-    <%= render partial: "items/form", locals: {item: @receipt.items.build} %>
+        <%if @receipt.items.size > 1 %>
+        
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Tax</th>
+                <th>Notes</th>
+                <th colspan=2>Make a note</th>
+            </tr>
+            <tr>
+                <td colspan=5><%= render partial: "items/item", collection: @receipt.items, as: :item || 'There are no items' %></td>
+            </tr>
+        <%end%>
+
+        <tr>
+            <th colspan=5>Add an item</th>
+        </tr>
+        <tr>
+            <td colspan=5><%= render partial: "items/form", locals: {item: @receipt.items.build} %></td>
+        </tr>
+        </table>
     <div>
     </div>
 </div>
